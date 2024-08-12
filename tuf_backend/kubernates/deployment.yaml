@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tuf_task_backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tuf_task_backend
+  template:
+    metadata:
+      labels:
+        app: tuf_task_backend
+    spec:
+      containers:
+        - name: tuf_task_backend
+          image: shubhamghanghotia/tuf_task
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: services-secret
