@@ -15,4 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build ./tuf_backend --file Dockerfile --tag tuf_backend:$(date +%s)
+      run: docker build -t tuf_backend:$(date +%s) -f tuf_backend/Dockerfile tuf_backend
+
