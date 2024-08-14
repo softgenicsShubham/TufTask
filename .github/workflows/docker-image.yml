@@ -26,4 +26,4 @@ jobs:
       run: docker build -t tuf_backend:${{ github.sha }} -f tuf_backend/Dockerfile tuf_backend
 
     - name: Push Docker image
-      run: docker push tuf_backend:${{ github.sha }}
+      run: docker push shubhamghanghotia/tuf_backend:${{ github.sha }}
